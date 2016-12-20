@@ -14,7 +14,7 @@ class AsyncCloudFlareClient {
     private final AsyncHTTPBuilder http
 
     AsyncCloudFlareClient(String apiKey, String email, String url = 'https://api.cloudflare.com/client/v4/') {
-        http = new AsyncHTTPBuilder(uri: url, contentType: ContentType.JSON)
+        http = new AsyncCloudFlareHTTPBuilder(uri: url, contentType: ContentType.JSON)
         http.headers = ['X-Auth-Key': apiKey, 'X-Auth-Email': email, 'User-Agent': 'HackAttack AsyncCloudFlareClient']
     }
 
